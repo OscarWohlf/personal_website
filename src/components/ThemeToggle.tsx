@@ -8,7 +8,7 @@ export default function ThemeToggle() {
                  bg-white dark:bg-zinc-800 dark:text-zinc-100 dark:border-zinc-700"
       aria-label="Toggle dark mode"
     >
-      ☀︎ / ☾
+      Light / Dark
     </button>
   )
 }

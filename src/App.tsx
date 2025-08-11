@@ -5,7 +5,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
       <Navbar />
-
       <main className="mx-auto max-w-5xl px-4">
         {/* Hero */}
         <section className="py-16 md:py-24">
@@ -13,8 +12,8 @@ export default function App() {
             Computational Science & ML — projects, notes, and experiments
           </h1>
           <p className="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
-            I’m a CSE student at EPFL. I like applied ML in biology/medicine, survival analysis,
-            and systems. Here’s a curated set of projects and writing.
+            Im a CSE student at EPFL. I like applied ML in biology/medicine, survival analysis,
+            and systems. Heres a curated set of projects and writing.
           </p>
         </section>
 
