@@ -1,12 +1,42 @@
+// src/pages/Contact.tsx
+import PageHeader from "../components/PageHeader"
+
 export default function Contact() {
+  const label = "text-[15px] font-medium text-zinc-700 dark:text-zinc-200"
+  const value = "text-zinc-700 dark:text-zinc-300"
+
   return (
     <section className="py-12">
-      <h2 className="text-xl font-semibold">Contact</h2>
-      <ul className="mt-4 space-y-2 text-zinc-600 dark:text-zinc-400">
-        <li>Email: <a className="underline" href="mailto:you@domain.com">you@domain.com</a></li>
-        <li>GitHub: <a className="underline" href="https://github.com/YOU" target="_blank">github.com/YOU</a></li>
-        <li>LinkedIn: <a className="underline" href="https://linkedin.com/in/YOU" target="_blank">linkedin.com/in/YOU</a></li>
-      </ul>
+      <PageHeader title="Contact" />
+
+      <dl className="mt-8 border rounded-xl divide-y divide-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
+        <div className="grid grid-cols-1 sm:grid-cols-[120px,1fr] gap-2 p-4">
+          <dt className={label}>Email</dt>
+          <dd className={value}>
+            <a href="mailto:oscarjhw@gmail.com" className="underline underline-offset-4 font-mono hover:text-zinc-900 dark:hover:text-white">
+              oscarjhw@gmail.com
+            </a>
+          </dd>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-[120px,1fr] gap-2 p-4">
+          <dt className={label}>GitHub</dt>
+          <dd className={value}>
+            <a href="https://github.com/OscarWohlf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-zinc-900 dark:hover:text-white">
+              github.com/OscarWohlf
+            </a>
+          </dd>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-[120px,1fr] gap-2 p-4">
+          <dt className={label}>LinkedIn</dt>
+          <dd className={value}>
+            <a href="https://linkedin.com/in/oscar-wohlfahrt-11bb51224" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-zinc-900 dark:hover:text-white">
+              linkedin.com/in/oscar-wohlfahrt-11bb51224
+            </a>
+          </dd>
+        </div>
+      </dl>
     </section>
   )
 }

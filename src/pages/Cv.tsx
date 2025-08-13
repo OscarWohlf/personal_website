@@ -1,4 +1,5 @@
 import { CV_URL, lastUpdated, education, experience, extras } from "../data/cv";
+import PageHeader from "../components/PageHeader"
 
 // helper to render string|string[] uniformly
 function Details({ value }: { value?: string | string[] }) {
@@ -16,18 +17,14 @@ function Details({ value }: { value?: string | string[] }) {
 export default function Cv() {
   return (
     <section className="py-12">
-      <div className="flex items-center justify-between gap-3">
-        <h1 className="text-2xl md:text-3xl font-semibold">Curriculum Vitae</h1>
-        <div className="flex gap-2">
-          <a
-            href={CV_URL}
-            download
-            className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow"
-          >
+      <PageHeader
+        title="Curriculum Vitae"
+        actions={
+            <a href={CV_URL} download className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
             Download PDF
-          </a>
-        </div>
-      </div>
+            </a>
+        }
+        />
       <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
         <span>Updated: {lastUpdated}</span>
       </div>
