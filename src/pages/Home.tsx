@@ -1,34 +1,36 @@
+// src/pages/Home.tsx
+import PageHeader from "../components/PageHeader"
+import { useI18n } from "../i18n/i18n"
+
 export default function Home() {
+  const { t } = useI18n()
   return (
     <section className="py-16 md:py-24">
-      <div className="grid items-center gap-8 md:grid-cols-[240px,1fr]">
+      <PageHeader title={t("home.title")} />
+
+      <article className="mt-8 max-w-3xl leading-relaxed text-zinc-700 dark:text-zinc-300">
         <img
-          src="me.jpg"
-          alt="Portrait of Oscar Wohlfahrt"
-          className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-2xl border dark:border-zinc-800"
+          src="/me_2.jpg"
+          alt="Portrait of Oscar Johan Høeg Wohlfahrt"
           loading="lazy"
+          className="
+            block rounded-2xl border dark:border-zinc-800 object-cover shadow-sm
+            w-full h-[380px] mb-4
+            md:float-left md:mr-8 md:mb-2 md:w-[320px] md:h-[480px] md:[shape-outside:margin-box]
+            lg:w-[360px] lg:h-[540px]
+          "
         />
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Hey, I'm Oscar — I build ML + computational science projects.
-          </h1>
-          <p className="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Short intro about you. A sentence or two about interests, current role/school,
-            and what you're exploring.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a className="px-4 py-2 rounded-xl border dark:border-zinc-700 hover:shadow" href="/cv">
-              View CV
-            </a>
-            <a className="px-4 py-2 rounded-xl border dark:border-zinc-700 hover:shadow" href="/projects">
-              See Projects
-            </a>
-            <a className="px-4 py-2 rounded-xl border dark:border-zinc-700 hover:shadow" href="/contact">
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
+
+        <h2 className="sr-only">{t("home.h1")}</h2>
+
+        <p>{t("home.p1")}</p>
+
+        <p className="mt-4">{t("home.p2")}</p>
+
+        <p className="mt-4">{t("home.p3")}</p>
+
+        <div className="clear-both" />
+      </article>
     </section>
   )
 }
