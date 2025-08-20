@@ -9,10 +9,10 @@ const en: Dict = {
   "nav.contact": "Contact",
 
   "home.title": "Welcome to my website!",
-  "home.h1": "Computational science & machine learning",
-  "home.p1": "I'm Oscar Johan Høeg Wohlfahrt. I recently finished a BSc in General Engineering at DTU (Copenhagen, 2025) and I’m starting an MSc in Computational Science & Engineering at EPFL. I’m interested in applied machine learning and numerical methods on real-world data.",
-  "home.p2": "Recently I've worked on survival analysis for estimating building lifetimes and explored small-world network models. I enjoy careful validation, reproducible experiments, and clear communication of results.",
-  "home.p3": "Based in Scandinavia. Outside of studies: rowing, skiing, and good coffee.",
+  "home.p1": "Hello! My name is Oscar Johan Høeg Wohlfahrt. I'm a Norwegian student in my first semester of the MSc in Computational Science and Engineering at EPFL in Lausanne, Switzerland. I recently completed a BSc in General Engineering at DTU in Copenhagen. Earlier, I spent a semester at NYU's Courant Institute in New York and a year studying finance in Milan.",
+  "home.p2": "My academic interests lie in the intersection of mathematics and computer science. I like learning ideas properly and then putting them into code. I care about applying methods to real problems, but also believe a solid theoretical foundation helps me understand what I'm doing. In my BSc thesis at DTU, I used survival analysis to estimate building lifetimes from Danish registry data. I'm curious about different application areas and currently interested in building experience in many domains.",
+  "home.p3": "In my free time I enjoy being outdoors and staying active. I've been a rower for many years, and I also like skiing and running. Beyond training, I spend time on small side projects (like this site), reading, exploring new places to eat, traveling, and seeing friends and family.",
+  "home.p4": "For my CV, projects, and contact details, please use the links at the top of the page.",
 
   "projects.title": "Projects",
   "contact.title": "Contact",
@@ -35,10 +35,10 @@ const nb: Dict = {
   "nav.contact": "Kontakt",
 
   "home.title": "Velkommen til nettsiden min!",
-  "home.h1": "Beregningsvitenskap og maskinlæring",
-  "home.p1": "Jeg heter Oscar Johan Høeg Wohlfahrt. Jeg fullførte nylig en bachelor i Allmenn ingeniørvitenskap ved DTU (København, 2025) og begynner på master i Computational Science & Engineering ved EPFL. Jeg er interessert i anvendt maskinlæring og numeriske metoder på data fra virkeligheten.",
-  "home.p2": "Nylig har jeg jobbet med overlevelsesanalyse for å anslå bygningers levetid, og utforsket small-world-nettverksmodeller. Jeg liker grundig validering, reproducerbare eksperimenter og tydelig formidling av resultater.",
-  "home.p3": "Basert i Skandinavia. Utenfor studier: roing, ski og god kaffe.",
+  "home.p1": "Hei! Jeg heter Oscar Johan Høeg Wohlfahrt. Jeg er en norsk student, som foreløpig er på første semester på en MSc i Computational Science and Engineering ved EPFL i Lausanne, Sveits. Jeg fullførte nylig en BSc i General Engineering ved DTU i København. Tidligere har jeg hatt et utvekslingssemester ved NYUs Courant Institute i New York og ett år med finansstudier i Milano.",
+  "home.p2": "Mine faglige interesser ligger i skjæringspunktet mellom matematikk og informatikk. Jeg liker å lære ideer skikkelig, for så å omsette dem til kode. Jeg er opptatt av å jobbe med reelle problemstillinger, men synes også det er viktig med et solid teoretisk grunnlag for å forstå hva man jobber med. I bacheloroppgaven min ved DTU brukte jeg overlevelsesanalyse til å estimere levetid av danske bygninger. Jeg er nysgjerrig på ulike anvendelsesområder og ønsker nå å bygge erfaring i ulike sektorer.",
+  "home.p3": "På fritiden liker jeg å være ute og holde meg aktiv. Jeg har rodd i mange år, og liker også ski og løping. Utover trening bruker jeg tid på små sideprosjekter (som denne nettsiden), lesing, å utforske nye spisesteder, reising og tid med venner og familie.",
+  "home.p4": "For CV, prosjekter og kontaktinformasjon, bruk lenkene øverst på siden.",
 
   "projects.title": "Prosjekter",
   "contact.title": "Kontakt",

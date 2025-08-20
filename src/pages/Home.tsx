@@ -21,14 +21,13 @@ export default function Home() {
           "
         />
 
-        <h2 className="sr-only">{t("home.h1")}</h2>
-
-        <p>{t("home.p1")}</p>
+        <p className="mt-4">{t("home.p1")}</p>
 
         <p className="mt-4">{t("home.p2")}</p>
 
         <p className="mt-4">{t("home.p3")}</p>
 
+        <p className="mt-4">{t("home.p4")}</p>
         <div className="clear-both" />
       </article>
     </section>
