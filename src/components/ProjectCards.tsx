@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
-function getFileNameFromUrl(urlStr: string) {
+export function getFileNameFromUrl(urlStr: string) {
   try {
     const url = new URL(urlStr, window.location.origin)
     const last = url.pathname.split('/').pop() || 'download.pdf'

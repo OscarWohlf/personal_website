@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import { projects } from '../data/projects'
+import { getFileNameFromUrl} from '../components/ProjectCards'
 
 export default function ProjectDetails() {
   const { slug } = useParams()
