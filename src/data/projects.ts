@@ -45,5 +45,13 @@ export const projects: Project[] = [
     paper: "/papers/small_world_paper.pdf",
     paperLabel: "Download Paper",
     paperFilename: "Wohlfahrt_Small_World_Networks.pdf",
+  },
+  {
+    slug: "processor-simulator",
+    title: "Processor Simulator in Python with Cache",
+    date: "Nov - Dec 2024",
+    description: "Anohter project I did during my exchange at NYU in a Computer Architecture class.",
+    image: "/images/processor_image.jpg",
+    repo: "https://github.com/OscarWohlf/processor"
   }
 ]
