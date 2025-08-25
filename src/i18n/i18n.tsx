@@ -15,6 +15,7 @@ const en: Dict = {
   "home.p4": "For my CV, projects, and contact details, please use the links at the top of the page.",
 
   "projects.title": "Projects",
+  "projects.desc": "Work in Progress... Some smaller projects are also available only on GitHhub.",
   "contact.title": "Contact",
   "contact.email": "Email",
   "contact.github": "GitHub",
@@ -41,6 +42,7 @@ const nb: Dict = {
   "home.p4": "For CV, prosjekter og kontaktinformasjon, bruk lenkene øverst på siden.",
 
   "projects.title": "Prosjekter",
+  "projects.desc": "Work in Progress... Noen mindre prosjekter er også kun tilgjengelig på GitHhub.",
   "contact.title": "Kontakt",
   "contact.email": "E-post",
   "contact.github": "GitHub",

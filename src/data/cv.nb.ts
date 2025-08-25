@@ -2,7 +2,7 @@
 import type { CVData } from "./cv"
 
 const data: CVData = {
-  CV_URL: "/Oscar_Wohlfahrt_CV.pdf",
+  CV_URL: "/papers/Oscar_Wohlfahrt_CV.pdf",
   lastUpdated: "aug 2025",
   education: [
     {

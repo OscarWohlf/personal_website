@@ -36,10 +36,13 @@ export default function ProjectDetails() {
                 </a>
             )}
             {p.paper && (
-                <a href={p.paper} download
-                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
+            <a
+                href={p.paper}
+                download={p.paperFilename ?? getFileNameFromUrl(p.paper)}
+                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow"
+            >
                 {p.paperLabel ?? "PDF"}
-                </a>
+            </a>
             )}
             </div>
         }

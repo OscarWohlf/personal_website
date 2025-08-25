@@ -2,6 +2,19 @@
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
+function getFileNameFromUrl(urlStr: string) {
+  try {
+    const url = new URL(urlStr, window.location.origin)
+    const last = url.pathname.split('/').pop() || 'download.pdf'
+    // strip any query/hash and decode
+    return decodeURIComponent(last.split('?')[0].split('#')[0]) || 'download.pdf'
+  } catch {
+    // relative path without origin fallback
+    const last = urlStr.split('/').pop() || 'download.pdf'
+    return decodeURIComponent(last.split('?')[0].split('#')[0]) || 'download.pdf'
+  }
+}
+
 export default function ProjectCard({ p }: { p: Project }) {
   function downloadPaper(e: React.MouseEvent) {
     e.preventDefault()
@@ -9,8 +22,8 @@ export default function ProjectCard({ p }: { p: Project }) {
     if (!p.paper) return
     const a = document.createElement('a')
     a.href = p.paper
-    // if you want a custom filename:
-    if (p.paperLabel) a.download = `${p.paperLabel.replace(/\s+/g, "_").toLowerCase()}.pdf`
+    // use explicit filename if provided, else derive from URL
+    a.download = p.paperFilename ?? getFileNameFromUrl(p.paper)
     document.body.appendChild(a)
     a.click()
     a.remove()
@@ -28,11 +41,7 @@ export default function ProjectCard({ p }: { p: Project }) {
           <h3 className="text-lg font-semibold group-hover:opacity-90">{p.title}</h3>
           {p.date && <span className="text-xs text-zinc-500">{p.date}</span>}
         </div>
-
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300 line-clamp-3">
-          {p.description}
-        </p>
-
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300 line-clamp-3">{p.description}</p>
         {p.tags?.length ? (
           <div className="mt-3 flex flex-wrap gap-2">
             {p.tags.map(t => (
@@ -41,7 +50,6 @@ export default function ProjectCard({ p }: { p: Project }) {
           </div>
         ) : null}
 
-        {/* Optional action row */}
         {p.paper && (
           <div className="mt-4">
             <button

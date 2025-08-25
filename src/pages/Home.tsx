@@ -10,7 +10,7 @@ export default function Home() {
 
       <article className="mt-8 max-w-3xl leading-relaxed text-zinc-700 dark:text-zinc-300">
         <img
-          src="/me_2.jpg"
+          src="/images/me_2.jpg"
           alt="Portrait of Oscar Johan Høeg Wohlfahrt"
           loading="lazy"
           className="

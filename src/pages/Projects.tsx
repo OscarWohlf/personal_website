@@ -9,7 +9,7 @@ export default function Projects() {
     <section className="py-12">
       <PageHeader title={t("projects.title")} />
       <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-              <span>Not completely up to date</span>
+              <span>{t("projects.desc")}</span>
             </div>
       <div className="mt-8">
         <ProjectsGrid />

@@ -10,47 +10,40 @@ export type Project = {
   repo?: string
   paper?: string   
   paperLabel?: string
+  paperFilename?: string 
 }
 
 export const projects: Project[] = [
   {
     slug: "building-lifetimes",
-    title: "Estimating Building Lifetimes with Survival Analysis",
-    date: "2025",
-    tags: ["ML", "Survival Analysis", "Python"],
-    description: "Cox/DeepSurv-style models on Danish building data to estimate service life and hazard over time.",
-    image: "/images/buildings.jpg",
-    content: [ /* ... */ ],
-    repo: "https://github.com/YOU/building-lifetimes",
-    link: "https://your-demo-or-writeup",
-    paper: "/papers/building-lifetimes.pdf",  // put file in /public/papers/...
-    paperLabel: "Paper"
+    title: "Estimating Building Lifetimes with Machine Learning",
+    date: "Feb - Jun 2025",
+    description: "My bachelor thesis was about estimating the lifetime of danish buildings using various machine learning methods. We also created and implemented our own baseline method. The thesis can be downloaded in the link on this site. A more publishable paper is also on its way. Code is also available on request.",
+    image: "/images/thesis_image.jpg",
+    content: ["My bachelor thesis at DTU was about estimating the lifetime of Danish buildings using various machine learning methods. We also created and implemented our own baseline method. The thesis can be downloaded in the link on this site. A more publishable paper is also on the way. Our code used for data processing and model training is available on request.",
+              "Abstract:",
+              "Accurately predicting building lifetime is essential for urban planning and sustainable development, yet modern survival analysis methods have not been thoroughly evaluated on largescale building datasets in Denmark. This proof-of-concept thesis investigates which survival analysis methods show the most predictive potential for Danish building data using the Danish Building and Housing Register (BBR), containing useful information on 4.4 million unique buildings.", 
+              "Using nested cross-validation we compare traditional methods (Kaplan-Meier, Nelson-Aalen, Cox Proportional Hazards), ensemble methods (Random Survival Forest, Gradient Boosting, and Component-wise Gradient Boosting), and a deep learning approach (DeepSurv) alongside a Benchmark model that combines feature-specific Kaplan-Meier estimators. Rather than predicting exact lifetimes, we evaluate each method's ability to correctly rank buildings by lifetime using Harrell's concordance index (C-index).",
+              "Despite notable data challenges, we achieve reasonable C-index values. Computational limitations necessitate training models on varying sample sizes, therefore subsets ranging from 0.1% to 100% are sampled with stratification from the complete dataset. Across most evaluations, traditional and ensemble methods demonstrate consistent performance without statistically significant differences, while DeepSurv shows highest potential but suffers from training instability. Feature importance analysis generally identifies physical building characteristics as the most significant predictors of demolition risk, whereas geographic location provides minimal predictive value.",
+              "This thesis establishes the feasibility of applying survival analysis methods to building lifetime prediction while highlighting the need for improved data quality in future research."],
+    paper: "/papers/thesis_full.pdf",
+    paperLabel: "Download Thesis",
+    paperFilename: "Wohlfahrt_Thesis_Full.pdf",
   },
   {
     slug: "small-world-networks",
-    title: "Small-World Networks: Modified Watts–Strogatz",
-    date: "2024",
-    tags: ["Networks", "Modeling"],
+    title: "Modified Watts-Strogatz Small-World Networks",
+    date: "Dec 2024",
     description:
-      "Exploration of small-world structure with rewiring variants; measuring clustering and path length tradeoffs.",
-    image: "/images/small-world.jpg",
-    content: [
-      "I implemented a modified Watts–Strogatz generator and profiled how rewiring probability affects clustering and path lengths.",
-      "Findings: modest rewiring yields small-world behavior with high clustering and short paths; excessive rewiring trends toward ER-like graphs."
-    ]
-  },
-  {
-    slug: "notebook-tooling",
-    title: "Reproducible ML Notebooks",
-    date: "2023",
-    tags: ["Python", "Tooling"],
-    description:
-      "A lightweight cookiecutter for reproducible experiments (env, data versioning, deterministic runs).",
-    image: "/images/notebooks.jpg",
-    content: [
-      "A small template emphasizing deterministic seeds, environment capture, and simple data versioning.",
-      "Avoids heavy frameworks; focuses on clarity and reproducibility."
+      "During my exchange at NYU I did a course in Mathematical MOdeling. Our final project in this course was to write a paper where we amde a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
+    image: "/images/small_world_image.jpg",
+    content: ["During my exchange at NYU I did a course in Mathematical MOdeling. Our final project in this course was to write a paper where we amde a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
+              "Abstract:",
+              "Many real-world networks have small-world properties, with high clustering combined with short path length, but do not have uniform node degree. In this project, we modify the standard Watts-Strogatz model by assigning the number of edges per node from a normal distribution instead of giving all nodes the same degree. We then rewire edges with a probability p and measure the characteristic path length L(p) and clustering coefficient C(p). Our results show that this approach still produces networks with small-world characteristics for a range of p-values. We also apply our method to the neural network of C. Elegans, and find a rewiring probability that minimizes the difference between the actual network and the model."
     ],
-    repo: "https://github.com/YOU/ml-notebook-template"
+    repo: "https://github.com/OscarWohlf/SmallWorldGraphs",
+    paper: "/papers/small_world_paper.pdf",
+    paperLabel: "Download Paper",
+    paperFilename: "Wohlfahrt_Small_World_Networks.pdf",
   }
 ]
