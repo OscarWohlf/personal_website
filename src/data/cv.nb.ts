@@ -2,68 +2,83 @@
 import type { CVData } from "./cv"
 
 const data: CVData = {
-  CV_URL: "/Oscar_Wohlfahrt_CV.pdf", // put this file in /public
+  CV_URL: "/Oscar_Wohlfahrt_CV.pdf",
   lastUpdated: "aug 2025",
   education: [
     {
-      title: "BSc Allmenn ingeniørvitenskap (informatikk/CS)",
+      title: "MSc Computational Science & Engineering",
+      org: "École Polytechnique Fédérale de Lausanne (EPFL)",
+      where: "Lausanne, Sveits",
+      period: "Aug 2025 - Jun 2027",
+      details: "Fokus på numerisk analyse, algoritmer, maskinlæring og beregninger. Studieplan og karakterer kan sendes ved forespørsel.",
+    },
+    {
+      title: "BSc General Engineering (Computer Science)",
       org: "Danmarks Tekniske Universitet (DTU)",
       where: "København, Danmark",
-      period: "aug 2022 – jun 2025",
+      period: "Aug 2022 - Jun 2025",
       details:
-        "Bacheloroppgave om maskinlæring for å anslå bygningers levetid. Utvalgte emner: Numeriske algoritmer, Maskinlæring, Algoritmer og datastrukturer.",
+        "Bacheloroppgave om å estimere bygningers levetid ved bruk av maskinlæring. Bygget en god base med realfag og spesiliaserte meg i datateknologi. Studieplan og karakterer kan sendes ved forespørsel.",
     },
     {
       title: "Utvekslingssemester",
       org: "New York University (NYU)",
       where: "New York, USA",
-      period: "aug 2024 – des 2024",
+      period: "Aug 2024 - Des 2024",
       details:
-        "Videregående lineær algebra, Sannsynlighet, Matematisk modellering, Datamaskinarkitektur; prosjekt på modifisert Watts–Strogatz small-world-modell.",
+        "Prosjekt: Modifisert Watts-Strogatz Small-World nettwerk. Fag: Videregående Lineær Algebra, Sannsynlighetsregning, Matematisk Modellering, Datamaskinarkitektur.",
     },
     {
-      title: "BSc Økonomi og administrasjon (1. år)",
+      title: "BSc Finans (1. år)",
       org: "Università Cattolica del Sacro Cuore",
       where: "Milano, Italia",
-      period: "aug 2021 – jun 2022",
+      period: "Aug 2021 - Jun 2022",
     },
     {
-      title: "Videregående — realfag",
-      org: "Ullern videregående skole",
+      title: "Videregående — Realfag",
+      org: "Ullern Videregående Skole",
       where: "Oslo, Norge",
-      period: "2017 – 2020",
+      period: "2017 - 2020",
     },
   ],
   experience: [
+        {
+      role: "Sommerstudent",
+      org: "Tet Digital",
+      where: "Oslo, Norway",
+      period: "Jun 2025 - Aug 2025",
+      details:
+        "Jobbet i AI-Labben til Tet-Digital. Prosjektet vårt var å lage en LLM agent som kunne gjøre analyse med hjelp av data fra en Snowflake database.",
+    },
     {
       role: "Studentmedarbeider",
       org: "L-Shop-Team",
       where: "København, Danmark",
-      period: "okt 2023 – jul 2024",
+      period: "Okt 2023 - Juli 2024",
       details:
-        "Databasearbeid, korrekturlesing og kundedialog i et flerspråklig miljø.",
+        "Diverse oppgaver, inkludert korrekturlesing, kundekommunikasjon, kontorstøtte og databasestyring. Bidro til et flerspråklig miljø, og viste sterke språkferdigheter og oppmerksomhet på detaljer.",
     },
     {
-      role: "Eventansvarlig / servitør",
+      role: "Event Manager/Servitør",
       org: "Sult",
       where: "Oslo, Norge",
-      period: "feb 2018 – aug 2023",
+      period: "Feb 2018 - Aug 2023",
       details:
-        "Planla og gjennomførte arrangementer (bryllup, konfirmasjoner, bedriftsarr.). Koordinering og kundekontakt.",
+        "Ledet, forberedte og serverte ved bryllup, konfirmasjoner, bedriftsarrangementer og lignende anledninger. Fikk erfaring i ledelse, planlegging, samarbeid og kommunikasjon.",
     },
     {
-      role: "Ro-trener",
+      role: "Rotrener",
       org: "Norske Studenters Roklubb",
       where: "Oslo, Norge",
-      period: "mai 2020 – aug 2023",
+      period: "Mai 2020 - Aug 2023",
       details:
-        "Trente 12–15-åringer; sommercamper og ukentlige økter.",
+        "Coachet barn i alderen 12-15 år. Instruerte på sommerskoler og assisterte ved ukentlige treninger.",
     },
   ],
   extras: [
-    "Norges rolandslag (2018–2021), junior/U23",
-    "Fadder/mentor for nye studenter (2019–2020)",
-    "Student-bartender (2022– )",
+    "Norges landslag i roing (2018-2021), Junior/U23",
+    "Fadder for nye studenter (2019-2020)",
+    "Student-bartender (2022- 2025)",
   ],
 }
 
