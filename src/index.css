@@ -38,3 +38,8 @@
 html:not(:hover) ::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+
+html, body { 
+  width: 100%;
+  overflow-x: clip;
+}
