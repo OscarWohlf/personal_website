@@ -8,6 +8,8 @@ export type Project = {
   content?: string[]
   link?: string
   repo?: string
+  paper?: string   
+  paperLabel?: string
 }
 
 export const projects: Project[] = [
@@ -16,16 +18,13 @@ export const projects: Project[] = [
     title: "Estimating Building Lifetimes with Survival Analysis",
     date: "2025",
     tags: ["ML", "Survival Analysis", "Python"],
-    description:
-      "Cox/DeepSurv-style models on Danish building data to estimate service life and hazard over time.",
+    description: "Cox/DeepSurv-style models on Danish building data to estimate service life and hazard over time.",
     image: "/images/buildings.jpg",
-    content: [
-      "I trained Cox and neural survival models on Danish building registry (BBR) data to estimate service life distributions.",
-      "The focus was on careful feature handling, proportional hazards assumptions, and calibration against baseline lifetimes.",
-      "Results: competitive concordance and well-behaved hazard curves on held-out municipalities."
-    ],
+    content: [ /* ... */ ],
     repo: "https://github.com/YOU/building-lifetimes",
-    link: "https://your-demo-or-writeup"
+    link: "https://your-demo-or-writeup",
+    paper: "/papers/building-lifetimes.pdf",  // put file in /public/papers/...
+    paperLabel: "Paper"
   },
   {
     slug: "small-world-networks",

@@ -19,25 +19,32 @@ export default function ProjectDetails() {
 
   return (
     <section className="py-12">
-      <PageHeader
+        <PageHeader
         title={p.title}
         actions={
-          <div className="flex gap-2">
+            <div className="flex gap-2">
             {p.link && (
-              <a href={p.link} target="_blank" rel="noopener noreferrer"
-                 className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
+                <a href={p.link} target="_blank" rel="noopener noreferrer"
+                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
                 Open
-              </a>
+                </a>
             )}
             {p.repo && (
-              <a href={p.repo} target="_blank" rel="noopener noreferrer"
-                 className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
+                <a href={p.repo} target="_blank" rel="noopener noreferrer"
+                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
                 Code
-              </a>
+                </a>
             )}
-          </div>
+            {p.paper && (
+                <a href={p.paper} download
+                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow">
+                {p.paperLabel ?? "PDF"}
+                </a>
+            )}
+            </div>
         }
-      />
+        />
+
 
       <div className="mt-2 text-sm text-zinc-500">
         {p.date && <span>{p.date}</span>}

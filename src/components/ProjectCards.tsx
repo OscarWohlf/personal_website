@@ -1,7 +1,21 @@
+// src/components/ProjectCard.tsx
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
 export default function ProjectCard({ p }: { p: Project }) {
+  function downloadPaper(e: React.MouseEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    if (!p.paper) return
+    const a = document.createElement('a')
+    a.href = p.paper
+    // if you want a custom filename:
+    if (p.paperLabel) a.download = `${p.paperLabel.replace(/\s+/g, "_").toLowerCase()}.pdf`
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+  }
+
   return (
     <Link
       to={`/projects/${p.slug}`}
@@ -14,18 +28,31 @@ export default function ProjectCard({ p }: { p: Project }) {
           <h3 className="text-lg font-semibold group-hover:opacity-90">{p.title}</h3>
           {p.date && <span className="text-xs text-zinc-500">{p.date}</span>}
         </div>
+
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300 line-clamp-3">
           {p.description}
         </p>
+
         {p.tags?.length ? (
           <div className="mt-3 flex flex-wrap gap-2">
             {p.tags.map(t => (
-              <span key={t} className="text-xs px-2 py-1 rounded-full border dark:border-zinc-700">
-                {t}
-              </span>
+              <span key={t} className="text-xs px-2 py-1 rounded-full border dark:border-zinc-700">{t}</span>
             ))}
           </div>
         ) : null}
+
+        {/* Optional action row */}
+        {p.paper && (
+          <div className="mt-4">
+            <button
+              onClick={downloadPaper}
+              className="px-3 py-1.5 text-xs rounded-xl border dark:border-zinc-700 hover:shadow"
+              aria-label={`Download paper for ${p.title}`}
+            >
+              {p.paperLabel ?? "PDF"}
+            </button>
+          </div>
+        )}
       </div>
     </Link>
   )
