@@ -23,7 +23,7 @@ const en: Dict = {
   "cv.title": "Curriculum Vitae",
   "cv.download": "Download PDF",
   "cv.education": "Education",
-  "cv.experience": "Experience",
+  "cv.experience": "Work Experience",
   "cv.extracurricular": "Extracurricular",
   "cv.updated": "Updated",
 }
@@ -49,7 +49,7 @@ const nb: Dict = {
   "cv.title": "Curriculum Vitae",
   "cv.download": "Last ned PDF",
   "cv.education": "Utdanning",
-  "cv.experience": "Erfaring",
+  "cv.experience": "Arbeidserfaring",
   "cv.extracurricular": "Annet",
   "cv.updated": "Oppdatert",
 }

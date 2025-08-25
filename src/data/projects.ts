@@ -5,13 +5,11 @@ export type Project = {
   tags?: string[]
   description: string
   image?: string
-  // long-form content for the details page (rendered as paragraphs)
   content?: string[]
-  link?: string   // live demo / paper / site
-  repo?: string   // GitHub
+  link?: string
+  repo?: string
 }
 
-// Example data — edit to your real projects
 export const projects: Project[] = [
   {
     slug: "building-lifetimes",
