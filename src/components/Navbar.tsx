@@ -1,3 +1,4 @@
+// src/components/Navbar.tsx
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
@@ -38,17 +39,26 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b dark:border-zinc-800 backdrop-blur bg-white/70 dark:bg-zinc-900/70 print:hidden">
       <div className="px-3 md:px-6">
+        {/* top row — unchanged on desktop */}
         <div className="flex items-center justify-between md:grid md:grid-cols-3 min-h-16 py-2">
-          <NavLink
-            to="/"
-            end
-            className="tracking-tight font-normal whitespace-nowrap leading-tight
-                       text-xl sm:text-2xl md:text-3xl lg:text-4xl"
-            title="Oscar Johan Høeg Wohlfahrt"
-          >
-            Oscar Johan Høeg Wohlfahrt
-          </NavLink>
+          {/* BRAND (truncate only on mobile) */}
+          <div className="min-w-0 flex-1 md:min-w-[auto] md:flex-none">
+            <NavLink
+              to="/"
+              end
+              onClick={() => setOpen(false)}
+              className="tracking-tight font-normal whitespace-nowrap md:whitespace-nowrap truncate md:truncate-0 leading-tight
+                         text-lg sm:text-xl md:text-3xl lg:text-4xl"
+              title="Oscar Johan Høeg Wohlfahrt"
+            >
+              {/* shorter labels on tiny screens, full on md+ */}
+              <span className="sm:hidden">Oscar Wohlfahrt</span>
+              <span className="hidden sm:inline md:hidden">Oscar J. H. Wohlfahrt</span>
+              <span className="hidden md:inline">Oscar Johan Høeg Wohlfahrt</span>
+            </NavLink>
+          </div>
 
+          {/* CENTER NAV (desktop only) */}
           <nav className="hidden md:flex justify-center items-center gap-5">
             <NavA to="/" end>{t("nav.about")}</NavA>
             <NavA to="/projects">{t("nav.projects")}</NavA>
@@ -56,9 +66,14 @@ export default function Navbar() {
             <NavA to="/contact">{t("nav.contact")}</NavA>
           </nav>
 
-          <div className="flex items-center justify-end gap-2">
-            <LangToggle />
-            <ThemeToggle />
+          {/* RIGHT ACTIONS */}
+          <div className="flex items-center justify-end gap-2 shrink-0">
+            {/* Hide toggles on mobile to free space; keep on desktop */}
+            <div className="hidden md:flex items-center gap-2">
+              <LangToggle />
+              <ThemeToggle />
+            </div>
+            {/* Hamburger (mobile only) */}
             <button
               className="md:hidden p-2 rounded-xl border dark:border-zinc-700"
               onClick={() => setOpen(v => !v)}
@@ -71,18 +86,23 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Phone Nav */}
+        {/* Mobile Nav (now also contains Lang/Theme) */}
         <div
           id="mobile-nav"
           className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-200 ${
-            open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+            open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <nav className="pb-3 pt-2 grid gap-2">
-            <NavA to="/" end onClick={() => setOpen(false)}>About</NavA>
-            <NavA to="/projects" onClick={() => setOpen(false)}>Projects</NavA>
-            <NavA to="/cv" onClick={() => setOpen(false)}>CV</NavA>
-            <NavA to="/contact" onClick={() => setOpen(false)}>Contact</NavA>
+            <NavA to="/" end onClick={() => setOpen(false)}>{t("nav.about")}</NavA>
+            <NavA to="/projects" onClick={() => setOpen(false)}>{t("nav.projects")}</NavA>
+            <NavA to="/cv" onClick={() => setOpen(false)}>{t("nav.cv")}</NavA>
+            <NavA to="/contact" onClick={() => setOpen(false)}>{t("nav.contact")}</NavA>
+
+            <div className="mt-2 flex items-center gap-2">
+              <LangToggle />
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
       </div>
