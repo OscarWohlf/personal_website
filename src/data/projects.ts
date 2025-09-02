@@ -61,6 +61,16 @@ export const projects: Project[] = [
     paperFilename: "Wohlfahrt_Lazer_Maze_Report.pdf",
   },
   {
+    slug: "gcl-project",
+    title: "Parser, Compiler and Interpreter for GCL",
+    date: "Feb-May 2024",
+    description: "A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#.",
+    image: "/images/gcl_image.png",
+    content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#. The project was done in a group of 3 people.",
+              "The GitHub repo, as well as instructions on how to run the project locally can be found through the link above."],
+    repo: "https://github.com/OscarWohlf/gcl_project"
+  },
+  {
     slug: "processor-simulator",
     title: "Processor Simulator in Python with Cache",
     date: "Nov - Dec 2024",
