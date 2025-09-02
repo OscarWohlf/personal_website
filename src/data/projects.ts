@@ -47,10 +47,26 @@ export const projects: Project[] = [
     paperFilename: "Wohlfahrt_Small_World_Networks.pdf",
   },
   {
+    slug: 'java-game',
+    title: "Lazer Maze Java Game",
+    date: "May 2024",
+    description: "A game made Java for the course 'Agile Object Oriented Software Development' at DTU", 
+    image: "/images/game_image.png",
+    content: ["A game made Java for the course 'Agile Object Oriented Software Development' at DTU. The game is a simple maze game where the player has to navigate a laser through a maze of mirrors. The game has a 30 level campaign mode, a online mode where you can play against other players and a sand-box mode where you can create your own levels.",
+              "The game was developed using Agile methodologies, with a focus on test-driven development and continuous integration. Through the links above you can find our repo, a video demo and a report on the development process and features."],
+    repo: "https://github.com/OscarWohlf/lazer_maze",
+    link: "https://www.youtube.com/watch?v=afP_-Q_go4M&ab_channel=LinusJuni",
+    paper: "/papers/lazer_maze_report.pdf",
+    paperLabel: "Download Report",
+    paperFilename: "Wohlfahrt_Lazer_Maze_Report.pdf",
+  },
+  {
     slug: "processor-simulator",
     title: "Processor Simulator in Python with Cache",
     date: "Nov - Dec 2024",
     description: "Anohter project I did during my exchange at NYU in a Computer Architecture class.",
+    content: ["Another project I did during my exchange at NYU in a Computer Architecture class.",
+              "You can read more about it in the GitHub repository linked above."],
     image: "/images/processor_image.jpg",
     repo: "https://github.com/OscarWohlf/processor"
   }
