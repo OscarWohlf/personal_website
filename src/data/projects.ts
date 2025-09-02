@@ -66,7 +66,7 @@ export const projects: Project[] = [
     date: "Feb-May 2024",
     description: "A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#.",
     image: "/images/gcl_image.png",
-    content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#. The project was done in a group of 3 people.",
+    content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the Guarded Commands Langauge (GCL) programming language using F#. GCL is a compact programming language defined by Edsger Dijkstra, which is made to make it easy to write proofs for a program.",
               "The GitHub repo, as well as instructions on how to run the project locally can be found through the link above."],
     repo: "https://github.com/OscarWohlf/gcl_project"
   },
