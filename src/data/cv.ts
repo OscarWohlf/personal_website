@@ -12,6 +12,10 @@ export type ExpItem = {
   where?: string
   period?: string
   details?: string | string[]
+  links?: {
+    label: string
+    href: string
+  }[]
 }
 export type CVData = {
   CV_URL: string

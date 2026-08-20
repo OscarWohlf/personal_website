@@ -15,6 +15,25 @@ function Details({ value }: { value?: string | string[] }) {
   )
 }
 
+function Links({ items }: { items?: ExpItem["links"] }) {
+  if (!items?.length) return null
+  return (
+    <div className="mt-3 flex flex-wrap gap-3 text-sm">
+      {items.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  )
+}
+
 function EduList({ items }: { items: EduItem[] }) {
   return (
     <ul className="mt-4 space-y-5">
@@ -47,6 +66,7 @@ function ExpList({ items }: { items: ExpItem[] }) {
             {x.org}{x.where ? ` — ${x.where}` : ""}
           </div>
           <Details value={x.details} />
+          <Links items={x.links} />
         </li>
       ))}
     </ul>

@@ -70,6 +70,12 @@ const data: CVData = {
         "Spent the summer in the Ruter AI Lab at Tet Digital, working on an LLM-based data agent for RuterGPT.",
         "The agent enabled natural-language access to internal Snowflake data and could generate SQL, analyses and visualizations. We also redesigned a complex RAG/text-to-SQL workflow into a more modular tool-based agent.",
       ],
+      links: [
+        {
+          label: "Read the Medium article",
+          href: "https://medium.com/ruter-produktutvikling-og-teknologi/snowflake-integration-in-rutergpt-ai-lab-at-ruter-tet-digital-2025-e64cdcc8f4ef",
+        },
+      ],
     },
     {
       role: "Student Assistant",
