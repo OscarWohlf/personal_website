@@ -1,6 +1,6 @@
 // src/pages/Contact.tsx
 import PageHeader from "../components/PageHeader"
-import { useI18n } from "../i18n/i18n"
+import { useI18n } from "../i18n/useI18n"
 
 
 export default function Contact() {

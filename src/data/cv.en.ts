@@ -18,7 +18,7 @@ const data: CVData = {
       where: "Copenhagen, Denmark",
       period: "Aug 2022 - Jun 2025",
       details:
-        "Thesis on ML for predicting building service life. Built a solid oundation on the natural sciences, and specialized in computer science. Study plan and transcripts available on request.",
+        "Thesis on ML for predicting building service life. Built a solid foundation on the natural sciences, and specialized in computer science. Study plan and transcripts available on request.",
     },
     {
       title: "Exchange Semester",
@@ -48,7 +48,7 @@ const data: CVData = {
       where: "Oslo, Norway",
       period: "Jun 2025 - Aug 2025",
       details:
-        "Spent the summer in the AI-Lab at Tet Digital. Our project was to great a LLM agent which could do analysis using data from a Snowflake database.",
+        "Spent the summer in the AI-Lab at Tet Digital. Our project was to create an LLM agent which could do analysis using data from a Snowflake database.",
     },
     {
       role: "Student Assistant",

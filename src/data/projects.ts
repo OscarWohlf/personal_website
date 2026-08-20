@@ -22,7 +22,7 @@ export const projects: Project[] = [
     image: "/images/thesis_image.jpg",
     content: ["My bachelor thesis at DTU was about estimating the lifetime of Danish buildings using various machine learning methods. We also created and implemented our own baseline method. The thesis can be downloaded in the link on this site. A more publishable paper is also on the way. Our code used for data processing and model training is available on request.",
               "Abstract:",
-              "Accurately predicting building lifetime is essential for urban planning and sustainable development, yet modern survival analysis methods have not been thoroughly evaluated on largescale building datasets in Denmark. This proof-of-concept thesis investigates which survival analysis methods show the most predictive potential for Danish building data using the Danish Building and Housing Register (BBR), containing useful information on 4.4 million unique buildings.", 
+              "Accurately predicting building lifetime is essential for urban planning and sustainable development, yet modern survival analysis methods have not been thoroughly evaluated on large-scale building datasets in Denmark. This proof-of-concept thesis investigates which survival analysis methods show the most predictive potential for Danish building data using the Danish Building and Housing Register (BBR), containing useful information on 4.4 million unique buildings.", 
               "Using nested cross-validation we compare traditional methods (Kaplan-Meier, Nelson-Aalen, Cox Proportional Hazards), ensemble methods (Random Survival Forest, Gradient Boosting, and Component-wise Gradient Boosting), and a deep learning approach (DeepSurv) alongside a Benchmark model that combines feature-specific Kaplan-Meier estimators. Rather than predicting exact lifetimes, we evaluate each method's ability to correctly rank buildings by lifetime using Harrell's concordance index (C-index).",
               "Despite notable data challenges, we achieve reasonable C-index values. Computational limitations necessitate training models on varying sample sizes, therefore subsets ranging from 0.1% to 100% are sampled with stratification from the complete dataset. Across most evaluations, traditional and ensemble methods demonstrate consistent performance without statistically significant differences, while DeepSurv shows highest potential but suffers from training instability. Feature importance analysis generally identifies physical building characteristics as the most significant predictors of demolition risk, whereas geographic location provides minimal predictive value.",
               "This thesis establishes the feasibility of applying survival analysis methods to building lifetime prediction while highlighting the need for improved data quality in future research."],
@@ -35,9 +35,9 @@ export const projects: Project[] = [
     title: "Modified Watts-Strogatz Small-World Networks",
     date: "Dec 2024",
     description:
-      "During my exchange at NYU I did a course in Mathematical MOdeling. Our final project in this course was to write a paper where we amde a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
+      "During my exchange at NYU I did a course in Mathematical Modeling. Our final project in this course was to write a paper where we made a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
     image: "/images/small_world_image.jpg",
-    content: ["During my exchange at NYU I did a course in Mathematical MOdeling. Our final project in this course was to write a paper where we amde a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
+    content: ["During my exchange at NYU I did a course in Mathematical Modeling. Our final project in this course was to write a paper where we made a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
               "Abstract:",
               "Many real-world networks have small-world properties, with high clustering combined with short path length, but do not have uniform node degree. In this project, we modify the standard Watts-Strogatz model by assigning the number of edges per node from a normal distribution instead of giving all nodes the same degree. We then rewire edges with a probability p and measure the characteristic path length L(p) and clustering coefficient C(p). Our results show that this approach still produces networks with small-world characteristics for a range of p-values. We also apply our method to the neural network of C. Elegans, and find a rewiring probability that minimizes the difference between the actual network and the model."
     ],
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     date: "Feb-May 2024",
     description: "A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#.",
     image: "/images/gcl_image.png",
-    content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the Guarded Commands Langauge (GCL) programming language using F#. GCL is a compact programming language defined by Edsger Dijkstra, which is made to make it easy to write proofs for a program.",
+    content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the Guarded Commands Language (GCL) programming language using F#. GCL is a compact programming language defined by Edsger Dijkstra, which is made to make it easy to write proofs for a program.",
               "The GitHub repo, as well as instructions on how to run the project locally can be found through the link above."],
     repo: "https://github.com/OscarWohlf/gcl_project"
   },
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     slug: "processor-simulator",
     title: "Processor Simulator in Python with Cache",
     date: "Nov - Dec 2024",
-    description: "Anohter project I did during my exchange at NYU in a Computer Architecture class.",
+    description: "Another project I did during my exchange at NYU in a Computer Architecture class.",
     content: ["Another project I did during my exchange at NYU in a Computer Architecture class.",
               "You can read more about it in the GitHub repository linked above."],
     image: "/images/processor_image.jpg",

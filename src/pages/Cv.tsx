@@ -1,6 +1,6 @@
 // src/pages/Cv.tsx
 import PageHeader from "../components/PageHeader"
-import { useI18n } from "../i18n/i18n"
+import { useI18n } from "../i18n/useI18n"
 import { getCvData, type EduItem, type ExpItem } from "../data/cv"
 
 // helper to render string|string[] uniformly

@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
-import { useI18n } from "../i18n/i18n"
+import { useI18n } from "../i18n/useI18n"
 import LangToggle from "./LangToggle"
 
 function NavA({
