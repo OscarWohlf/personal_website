@@ -6,6 +6,7 @@ type Dict = Record<string, string>
 export const en: Dict = {
   "nav.about": "About",
   "nav.projects": "Projects",
+  "nav.updates": "Updates",
   "nav.cv": "CV",
   "nav.contact": "Contact",
 
@@ -17,6 +18,10 @@ export const en: Dict = {
 
   "projects.title": "Projects",
   "projects.desc": "Work in Progress... Some smaller projects are also available only on GitHub.",
+  "updates.title": "Updates",
+  "updates.latest": "Latest updates",
+  "updates.all": "All updates",
+  "updates.desc": "Small personal, academic, and work notes. Some are short; some may become longer over time.",
   "contact.title": "Contact",
   "contact.email": "Email",
   "contact.github": "GitHub",
@@ -33,6 +38,7 @@ export const en: Dict = {
 export const nb: Dict = {
   "nav.about": "Om meg",
   "nav.projects": "Prosjekter",
+  "nav.updates": "Oppdateringer",
   "nav.cv": "CV",
   "nav.contact": "Kontakt",
 
@@ -44,6 +50,10 @@ export const nb: Dict = {
 
   "projects.title": "Prosjekter",
   "projects.desc": "Work in Progress... Noen mindre prosjekter er også kun tilgjengelig på GitHub.",
+  "updates.title": "Oppdateringer",
+  "updates.latest": "Siste oppdateringer",
+  "updates.all": "Alle oppdateringer",
+  "updates.desc": "Små notater fra studier, jobb og ting jeg har vært med på. Noen er korte, andre kan bli lengre etter hvert.",
   "contact.title": "Kontakt",
   "contact.email": "E-post",
   "contact.github": "GitHub",
