@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     slug: "lean-proof-generation",
     title: "Adaptive Compute Allocation for Lean Proof Generation",
-    date: "Spring 2026",
+    date: "Fev - June 2026",
     tags: ["LLMs", "Lean", "Formal Methods", "Inference-Time Compute"],
     description:
       "An EPFL semester project on whether inference-time compute can be allocated more effectively when generating formal Lean proofs with language models.",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: "multi-hop-qa-generation",
     title: "Automated Multi-Hop QA Generation for LLM Post-Training",
-    date: "Spring 2026",
+    date: "Feb - June 2026",
     tags: ["LLMs", "Reinforcement Learning", "NLP", "Data Generation"],
     description:
       "A group project building an automated pipeline for generating document-grounded multi-hop question-answer datasets for LLM post-training.",
