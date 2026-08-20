@@ -8,12 +8,68 @@ export type Project = {
   content?: string[]
   link?: string
   repo?: string
-  paper?: string   
+  paper?: string
   paperLabel?: string
-  paperFilename?: string 
+  paperFilename?: string
+  attachments?: {
+    href: string
+    label: string
+    filename?: string
+  }[]
 }
 
 export const projects: Project[] = [
+  {
+    slug: "lean-proof-generation",
+    title: "Adaptive Compute Allocation for Lean Proof Generation",
+    date: "Spring 2026",
+    tags: ["LLMs", "Lean", "Formal Methods", "Inference-Time Compute"],
+    description:
+      "An EPFL semester project on whether inference-time compute can be allocated more effectively when generating formal Lean proofs with language models.",
+    image: "/images/lean_proof_generation.png",
+    content: [
+      "This was my semester project at EPFL, supervised by Etienne Bamas at the Chair of Mathematical Data Science. The project studies Lean proof generation with language models, where generated proofs can be automatically accepted or rejected by the Lean verifier.",
+      "The main question was whether inference-time compute can be used more intelligently than a fixed sampling budget. I compared standard sampling baselines with power-sampling-inspired methods, simple phase-based adaptive controllers, and a lightweight learned controller using proof-position and uncertainty features.",
+      "Summary:",
+      "The experiments showed that additional inference-time compute can improve single-attempt proof generation, but often at a high token cost. The adaptive controllers explored in the project did not consistently outperform the best fixed-budget configurations, but the results highlighted useful practical challenges around compute allocation, uncertainty signals, and the accuracy-cost trade-off in formal proof generation.",
+    ],
+    attachments: [
+      {
+        href: "/papers/OscarWohlfahrt_SemesterProject1_Report.pdf",
+        label: "Download Report",
+        filename: "Wohlfahrt_Lean_Proof_Generation_Report.pdf",
+      },
+    ],
+  },
+  {
+    slug: "multi-hop-qa-generation",
+    title: "Automated Multi-Hop QA Generation for LLM Post-Training",
+    date: "Spring 2026",
+    tags: ["LLMs", "Reinforcement Learning", "NLP", "Data Generation"],
+    description:
+      "A group project building an automated pipeline for generating document-grounded multi-hop question-answer datasets for LLM post-training.",
+    image: "/images/qa_pipeline.png",
+    content: [
+      "This project was connected to the Swiss AI Initiative at EPFL and the EE-568 Reinforcement Learning course. The goal was to generate question-answer datasets that force models to reason over long documents rather than rely on memorized facts or shallow lexical matching.",
+      "We built an end-to-end pipeline that extracts relational triples from raw documents, verifies them with natural language inference, chains them into multi-hop reasoning paths, filters invalid chains, and then generates natural-language questions. We used the generated datasets to run initial post-training experiments with Qwen2.5-7B-Instruct under several reinforcement learning policies.",
+      "Abstract:",
+      "Large Language Models frequently bypass reasoning from context in favor of memorized knowledge or lexical matching, undermining their reliability in long-context tasks. Reinforcement learning post-training on question-answer datasets is a promising way to encourage more faithful reasoning, but existing datasets are often too small, too easy, or not automatically verifiable.",
+      "We proposed an automated pipeline for generating large-scale, multi-hop QA datasets from raw documents without human annotation. The pipeline extracts structured relational triples, verifies textual support with NLI, chains verified triples into multi-hop reasoning paths, and synthesizes questions that require integrating evidence across multiple text passages.",
+      "Initial experiments showed improvements in long-context document-grounded reasoning, and confirmed that even strong models struggle with the generated multi-hop questions before post-training.",
+    ],
+    attachments: [
+      {
+        href: "/papers/Apertus_QA_report_OscarWohlfahrt.pdf",
+        label: "Download Report",
+        filename: "Wohlfahrt_Apertus_QA_Report.pdf",
+      },
+      {
+        href: "/papers/Apertus_QA_poster_OscarWohlfahrt.pdf",
+        label: "Download Poster",
+        filename: "Wohlfahrt_Apertus_QA_Poster.pdf",
+      },
+    ],
+  },
   {
     slug: "building-lifetimes",
     title: "Estimating Building Lifetimes with Machine Learning",

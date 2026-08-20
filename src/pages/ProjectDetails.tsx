@@ -18,6 +18,21 @@ export default function ProjectDetails() {
     )
   }
 
+  const downloads = [
+    ...(p.paper
+      ? [{
+          href: p.paper,
+          label: p.paperLabel ?? "PDF",
+          filename: p.paperFilename ?? getFileNameFromUrl(p.paper),
+        }]
+      : []),
+    ...(p.attachments ?? []).map((attachment) => ({
+      href: attachment.href,
+      label: attachment.label,
+      filename: attachment.filename ?? getFileNameFromUrl(attachment.href),
+    })),
+  ]
+
   return (
     <section className="py-12">
         <PageHeader
@@ -36,15 +51,16 @@ export default function ProjectDetails() {
                 Code
                 </a>
             )}
-            {p.paper && (
-            <a
-                href={p.paper}
-                download={p.paperFilename ?? getFileNameFromUrl(p.paper)}
-                className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow"
-            >
-                {p.paperLabel ?? "PDF"}
-            </a>
-            )}
+            {downloads.map((download) => (
+                <a
+                    key={download.href}
+                    href={download.href}
+                    download={download.filename}
+                    className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow"
+                >
+                    {download.label}
+                </a>
+            ))}
             </div>
         }
         />

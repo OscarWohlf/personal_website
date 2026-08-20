@@ -4,14 +4,27 @@ import type { Project } from '../data/projects'
 import { getFileNameFromUrl } from '../utils/download'
 
 export default function ProjectCard({ p }: { p: Project }) {
-  function downloadPaper(e: React.MouseEvent) {
+  const downloads = [
+    ...(p.paper
+      ? [{
+          href: p.paper,
+          label: p.paperLabel ?? "PDF",
+          filename: p.paperFilename ?? getFileNameFromUrl(p.paper),
+        }]
+      : []),
+    ...(p.attachments ?? []).map((attachment) => ({
+      href: attachment.href,
+      label: attachment.label,
+      filename: attachment.filename ?? getFileNameFromUrl(attachment.href),
+    })),
+  ]
+
+  function downloadFile(e: React.MouseEvent, href: string, filename: string) {
     e.preventDefault()
     e.stopPropagation()
-    if (!p.paper) return
     const a = document.createElement('a')
-    a.href = p.paper
-    // use explicit filename if provided, else derive from URL
-    a.download = p.paperFilename ?? getFileNameFromUrl(p.paper)
+    a.href = href
+    a.download = filename
     document.body.appendChild(a)
     a.click()
     a.remove()
@@ -38,17 +51,20 @@ export default function ProjectCard({ p }: { p: Project }) {
           </div>
         ) : null}
 
-        {p.paper && (
-          <div className="mt-4">
-            <button
-              onClick={downloadPaper}
-              className="px-3 py-1.5 text-xs rounded-xl border dark:border-zinc-700 hover:shadow"
-              aria-label={`Download paper for ${p.title}`}
-            >
-              {p.paperLabel ?? "PDF"}
-            </button>
+        {downloads.length ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {downloads.map((download) => (
+              <button
+                key={download.href}
+                onClick={(e) => downloadFile(e, download.href, download.filename)}
+                className="px-3 py-1.5 text-xs rounded-xl border dark:border-zinc-700 hover:shadow"
+                aria-label={`${download.label} for ${p.title}`}
+              >
+                {download.label}
+              </button>
+            ))}
           </div>
-        )}
+        ) : null}
       </div>
     </Link>
   )
