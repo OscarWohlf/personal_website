@@ -10,13 +10,13 @@ export default function Home() {
       <div className="mx-auto max-w-3xl">
         <PageHeader title={t("home.title")} />
 
-        <article className="mt-8 leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <article className="mt-8 leading-relaxed text-stone-700 dark:text-zinc-300">
           <img
             src="/images/me_2.jpg"
             alt="Portrait of Oscar Johan Høeg Wohlfahrt"
             loading="lazy"
             className="
-              block rounded-2xl border dark:border-zinc-800 object-cover shadow-sm
+              block rounded-2xl border border-stone-200/80 dark:border-zinc-800 object-cover shadow-sm
               w-full h-[380px] mb-4
               md:float-left md:mr-8 md:mb-2 md:w-[320px] md:h-[480px] md:[shape-outside:margin-box]
               lg:w-[360px] lg:h-[540px]
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="clear-both" />
         </article>
 
-        <div className="mt-12 border-t pt-8 dark:border-zinc-800">
+        <div className="mt-12 border-t border-stone-200/80 pt-8 dark:border-zinc-800">
           <LatestUpdates />
         </div>
       </div>

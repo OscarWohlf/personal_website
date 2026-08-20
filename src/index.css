@@ -43,3 +43,11 @@ html, body {
   width: 100%;
   overflow-x: clip;
 }
+
+::selection {
+  background: rgb(253 230 138 / 0.55);
+}
+
+.dark ::selection {
+  background: rgb(113 63 18 / 0.7);
+}

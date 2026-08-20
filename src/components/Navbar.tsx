@@ -37,7 +37,7 @@ export default function Navbar() {
   const { t } = useI18n()
 
   return (
-    <header className="sticky top-0 z-50 border-b dark:border-zinc-800 backdrop-blur bg-white/70 dark:bg-zinc-900/70 print:hidden">
+    <header className="sticky top-0 z-50 border-b border-stone-200/80 dark:border-zinc-800 backdrop-blur bg-stone-50/80 dark:bg-zinc-900/70 print:hidden">
       <div className="px-3 md:px-6">
         {/* Top row: desktop grid only at xl; phones/tablets stay flex */}
         <div className="flex items-center justify-between xl:grid xl:grid-cols-3 min-h-16 py-2">
@@ -73,7 +73,7 @@ export default function Navbar() {
               <ThemeToggle />
             </div>
             <button
-              className="xl:hidden p-2 rounded-xl border dark:border-zinc-700"
+              className="xl:hidden p-2 rounded-xl border border-stone-300/80 dark:border-zinc-700"
               onClick={() => setOpen(v => !v)}
               aria-label="Toggle menu"
               aria-expanded={open}

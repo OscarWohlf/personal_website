@@ -7,11 +7,11 @@ import { getCvData, type EduItem, type ExpItem } from "../data/cv"
 function Details({ value }: { value?: string | string[] }) {
   if (!value) return null
   return Array.isArray(value) ? (
-    <div className="mt-2 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+    <div className="mt-2 space-y-2 text-sm text-stone-700 dark:text-zinc-300">
       {value.map((p, i) => <p key={i}>{p}</p>)}
     </div>
   ) : (
-    <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">{value}</p>
+    <p className="mt-2 text-sm text-stone-700 dark:text-zinc-300">{value}</p>
   )
 }
 
@@ -25,7 +25,7 @@ function Links({ items }: { items?: ExpItem["links"] }) {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-4 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+          className="underline underline-offset-4 text-stone-700 hover:text-stone-950 dark:text-zinc-300 dark:hover:text-white"
         >
           {link.label}
         </a>
@@ -38,12 +38,12 @@ function EduList({ items }: { items: EduItem[] }) {
   return (
     <ul className="mt-4 space-y-5">
       {items.map((e) => (
-        <li key={`${e.title}-${e.org}`} className="rounded-xl border dark:border-zinc-800 p-4">
+        <li key={`${e.title}-${e.org}`} className="rounded-xl border border-stone-200/80 bg-white/40 dark:border-zinc-800 dark:bg-transparent p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <div className="font-medium">{e.title}</div>
-            {e.period && <div className="text-sm text-zinc-500">{e.period}</div>}
+            {e.period && <div className="text-sm text-stone-500 dark:text-zinc-400">{e.period}</div>}
           </div>
-          <div className="text-sm text-zinc-600 dark:text-zinc-400">
+          <div className="text-sm text-stone-600 dark:text-zinc-400">
             {e.org}{e.where ? ` — ${e.where}` : ""}
           </div>
           <Details value={e.details} />
@@ -57,12 +57,12 @@ function ExpList({ items }: { items: ExpItem[] }) {
   return (
     <ul className="mt-4 space-y-5">
       {items.map((x) => (
-        <li key={`${x.role}-${x.org}`} className="rounded-xl border dark:border-zinc-800 p-4">
+        <li key={`${x.role}-${x.org}`} className="rounded-xl border border-stone-200/80 bg-white/40 dark:border-zinc-800 dark:bg-transparent p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <div className="font-medium">{x.role}</div>
-            {x.period && <div className="text-sm text-zinc-500">{x.period}</div>}
+            {x.period && <div className="text-sm text-stone-500 dark:text-zinc-400">{x.period}</div>}
           </div>
-          <div className="text-sm text-zinc-600 dark:text-zinc-400">
+          <div className="text-sm text-stone-600 dark:text-zinc-400">
             {x.org}{x.where ? ` — ${x.where}` : ""}
           </div>
           <Details value={x.details} />
@@ -85,14 +85,14 @@ export default function Cv() {
           <a
             href={cv.CV_URL}
             download
-            className="px-3 py-2 text-sm rounded-xl border dark:border-zinc-700 hover:shadow"
+            className="px-3 py-2 text-sm rounded-xl border border-stone-300/80 bg-stone-50/70 dark:border-zinc-700 dark:bg-transparent hover:shadow"
           >
             {t("cv.download")}
           </a>
         }
       />
 
-      <div className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+      <div className="mt-2 text-xs text-stone-500 dark:text-zinc-400">
         {cv.lastUpdated && <span>{t("cv.updated")}: {cv.lastUpdated}</span>}
       </div>
 
@@ -109,7 +109,7 @@ export default function Cv() {
       {!!cv.extras?.length && (
         <section className="mt-10">
           <h2 className="text-xl font-semibold">{t("cv.extracurricular")}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+          <ul className="mt-3 space-y-2 text-sm text-stone-700 dark:text-zinc-300">
             {cv.extras.map((e, i) => (
               <li key={i}>{Array.isArray(e) ? e.join(" — ") : e}</li>
             ))}

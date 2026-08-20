@@ -25,22 +25,22 @@ export default function LatestUpdates({ limit = 5 }: { limit?: number }) {
         <h2 className="text-lg font-semibold">{t("updates.latest")}</h2>
         <Link
           to="/updates"
-          className="shrink-0 text-sm underline underline-offset-4 hover:opacity-80"
+          className="shrink-0 text-sm underline underline-offset-4 text-stone-700 hover:text-stone-950 dark:text-zinc-300 dark:hover:text-white"
         >
           {t("updates.all")}
         </Link>
       </div>
 
-      <ol className="mt-5 space-y-5 border-l dark:border-zinc-800">
+      <ol className="mt-5 space-y-5 border-l border-stone-200/80 dark:border-zinc-800">
         {latest.map((update) => (
           <li key={update.slug} className="pl-4">
-            <time className="text-xs text-zinc-500 dark:text-zinc-400">
+            <time className="text-xs text-stone-500 dark:text-zinc-400">
               {formatDate(update, lang)}
             </time>
             <h3 className="mt-1 text-sm font-medium leading-snug">
               {update.title[lang]}
             </h3>
-            <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            <p className="mt-1 text-sm leading-relaxed text-stone-600 dark:text-zinc-300">
               {update.summary[lang]}
             </p>
           </li>

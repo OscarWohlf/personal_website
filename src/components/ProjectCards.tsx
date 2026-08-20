@@ -40,7 +40,7 @@ export default function ProjectCard({ p }: { p: Project }) {
   ]
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border dark:border-zinc-800 overflow-hidden hover:shadow-lg transition bg-white dark:bg-zinc-800">
+    <article className="group flex h-full flex-col rounded-2xl border border-stone-200/80 dark:border-zinc-800 overflow-hidden hover:shadow-lg transition bg-white/80 dark:bg-zinc-800">
       <Link
         to={`/projects/${p.slug}`}
         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 dark:focus-visible:ring-white/30"
@@ -50,13 +50,13 @@ export default function ProjectCard({ p }: { p: Project }) {
         <div className="p-4">
           <div className="flex items-center justify-between gap-2">
             <h3 className="text-lg font-semibold group-hover:opacity-90">{p.title}</h3>
-            {p.date && <span className="shrink-0 text-xs text-zinc-500">{p.date}</span>}
+            {p.date && <span className="shrink-0 text-xs text-stone-500 dark:text-zinc-400">{p.date}</span>}
           </div>
-          <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300 line-clamp-3">{p.description}</p>
+          <p className="mt-2 text-sm text-stone-600 dark:text-zinc-300 line-clamp-3">{p.description}</p>
           {p.tags?.length ? (
             <div className="mt-3 flex flex-wrap gap-2">
               {p.tags.map(t => (
-                <span key={t} className="text-xs px-2 py-1 rounded-full border dark:border-zinc-700">{t}</span>
+                <span key={t} className="text-xs px-2 py-1 rounded-full border border-stone-200/80 bg-stone-50/70 dark:border-zinc-700 dark:bg-transparent">{t}</span>
               ))}
             </div>
           ) : null}
@@ -72,7 +72,7 @@ export default function ProjectCard({ p }: { p: Project }) {
               target={action.external ? "_blank" : undefined}
               rel={action.external ? "noopener noreferrer" : undefined}
               download={action.filename}
-              className="px-3 py-1.5 text-xs rounded-xl border dark:border-zinc-700 hover:shadow"
+              className="px-3 py-1.5 text-xs rounded-xl border border-stone-300/80 bg-stone-50/70 dark:border-zinc-700 dark:bg-transparent hover:shadow"
               aria-label={`${action.label} for ${p.title}`}
             >
               {action.label}
