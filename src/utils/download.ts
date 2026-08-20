@@ -1,5 +1,3 @@
-
-
 export function getFileNameFromUrl(urlStr: string) {
   try {
     const url = new URL(urlStr, window.location.origin)
