@@ -1,7 +1,36 @@
 import { useParams, Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
-import { projects } from '../data/projects'
+import { projects, type ProjectContent } from '../data/projects'
 import { getFileNameFromUrl } from '../utils/download'
+
+function renderContentBlock(block: ProjectContent, index: number) {
+  if (typeof block === "string") {
+    const isHeading = block.endsWith(":") && block.length < 80
+    return isHeading
+      ? <h2 key={index} className="pt-4 text-lg font-semibold text-stone-950 dark:text-zinc-100">{block.slice(0, -1)}</h2>
+      : <p key={index}>{block}</p>
+  }
+
+  if (block.type === "heading") {
+    return (
+      <h2 key={index} className="pt-4 text-lg font-semibold text-stone-950 dark:text-zinc-100">
+        {block.text}
+      </h2>
+    )
+  }
+
+  if (block.type === "list") {
+    return (
+      <ul key={index} className="list-disc space-y-2 pl-5">
+        {block.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  return <p key={index}>{block.text}</p>
+}
 
 export default function ProjectDetails() {
   const { slug } = useParams()
@@ -83,7 +112,7 @@ export default function ProjectDetails() {
 
       <article className="mt-6 max-w-3xl leading-relaxed text-stone-700 dark:text-zinc-300 space-y-4">
         {p.content?.length
-          ? p.content.map((para, i) => <p key={i}>{para}</p>)
+          ? p.content.map(renderContentBlock)
           : <p>{p.description}</p>}
       </article>
 

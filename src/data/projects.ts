@@ -1,3 +1,18 @@
+export type ProjectContent =
+  | string
+  | {
+      type: "heading"
+      text: string
+    }
+  | {
+      type: "paragraph"
+      text: string
+    }
+  | {
+      type: "list"
+      items: string[]
+    }
+
 export type Project = {
   slug: string
   title: string
@@ -5,7 +20,7 @@ export type Project = {
   tags?: string[]
   description: string
   image?: string
-  content?: string[]
+  content?: ProjectContent[]
   link?: string
   repo?: string
   paper?: string
@@ -29,9 +44,47 @@ export const projects: Project[] = [
     image: "/images/lean_proof_generation.png",
     content: [
       "This was my semester project at EPFL, supervised by Etienne Bamas at the Chair of Mathematical Data Science. The project studies Lean proof generation with language models, where generated proofs can be automatically accepted or rejected by the Lean verifier.",
-      "The main question was whether inference-time compute can be used more intelligently than a fixed sampling budget. I compared standard sampling baselines with power-sampling-inspired methods, simple phase-based adaptive controllers, and a lightweight learned controller using proof-position and uncertainty features.",
-      "Summary:",
-      "The experiments showed that additional inference-time compute can improve single-attempt proof generation, but often at a high token cost. The adaptive controllers explored in the project did not consistently outperform the best fixed-budget configurations, but the results highlighted useful practical challenges around compute allocation, uncertainty signals, and the accuracy-cost trade-off in formal proof generation.",
+      {
+        type: "heading",
+        text: "Introduction",
+      },
+      {
+        type: "paragraph",
+        text: "Large language models have recently had a significant improvement in mathematical reasoning abilities, in both formal and informal theorem proving. In formal theorem proving, the goal is not only to produce a correct mathematical argument, but also to generate a proof that can be checked by a proof assistant like Lean. This makes the setting especially interesting for evaluating reasoning systems, since the generated proof can be accepted or rejected automatically by the verifier.",
+      },
+      {
+        type: "paragraph",
+        text: "Generating correct formal proofs is however still challenging, even with the clean verification signal. For a proof to be accepted, the model must generate Lean code that is syntactically correct, compatible with the verifier environment, and closes all proof goals. A small local mistake can cause the entire proof to fail, and the search space of possible proofs is very large. The success rate can depend heavily on how inference-time compute is used. There are many possible ways to allocate this compute, for instance one can sample more proofs, use more expensive search procedures, or apply methods that sharpen the model distribution toward more likely reasoning trajectories.",
+      },
+      {
+        type: "paragraph",
+        text: "Recent work has suggested that part of the benefit of reinforcement learning post-training may come from sharpening a model's existing output distribution rather than teaching it entirely new capabilities. This has motivated training-free alternatives to RL, such as power sampling, where the goal is to sample from a sharpened distribution over full generated sequences. Exact sampling from this sequence-level distribution is challenging in the autoregressive setting, as the probability of the next token under the sharpened distribution does not only depend on its local probability, but on the total probability mass of all possible future continuations after that token. Computing this exactly would require summing over an exponentially large space of continuations, so practical methods must approximate the distribution using additional inference-time compute. Newer scalable variants attempt to make this more efficient by approximating the effect of trajectory-level sharpening during autoregressive generation.",
+      },
+      {
+        type: "paragraph",
+        text: "In this project, we study these ideas in the setting of Lean proof generation. Our main question is whether inference-time compute can be allocated more effectively when generating formal proofs. Standard fixed-budget methods spend the same amount of compute throughout generation, even though different parts of a proof may have different levels of difficulty or importance. We therefore investigate both fixed-budget sampling methods and adaptive budget controllers that choose how much compute to spend at different stages of the generation.",
+      },
+      {
+        type: "paragraph",
+        text: "Throughout the project we evaluate several approaches. First, we compare standard sampling baselines with power-sampling methods under different compute budgets. Second, we study simple adaptive controllers based on proof position. Third, we train a lightweight learned controller on generated proof trajectories, using proof-position and uncertainty features to choose between sampling modes. The goal is to improve the trade-off between proof success and compute cost. Throughout the report, generated proofs are checked using Lean, and performance is measured by proof success rate and inference-time compute usage.",
+      },
+      {
+        type: "paragraph",
+        text: "Our experiments show that additional inference-time compute can improve single-attempt proof generation, but that the accuracy gains come at a highly increased token cost. The advantage does however become less clear when compared with baselines using multiple independent samples. The adaptive controllers explored in this project do not consistently improve over the best fixed-budget configurations. The methods highlight some of the practical difficulties of adaptive compute allocation, for instance, that the available sampling modes must differ meaningfully in their accuracy-cost behaviour, and that learned controllers require informative features, training trajectories, and verification labels.",
+      },
+      {
+        type: "heading",
+        text: "Project overview",
+      },
+      {
+        type: "list",
+        items: [
+          "We evaluate standard sampling baselines and power-sampling methods for Lean proof generation under different compute budgets.",
+          "We compare the accuracy-cost trade-off of single-attempt rollout-based sampling with independent pass@k sampling.",
+          "We investigate simple phase-based controllers and a lightweight learned controller for adaptive inference-time compute allocation.",
+          "We perform exploratory uncertainty diagnostics to study whether model likelihoods provide a useful signal for proof failure and adaptive control.",
+        ],
+      },
     ],
     attachments: [
       {
