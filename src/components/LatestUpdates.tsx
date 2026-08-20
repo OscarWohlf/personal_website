@@ -20,7 +20,7 @@ export default function LatestUpdates({ limit = 5 }: { limit?: number }) {
   const latest = getLatestUpdates(limit)
 
   return (
-    <aside className="lg:sticky lg:top-24">
+    <section>
       <div className="flex items-center justify-between gap-4">
         <h2 className="text-lg font-semibold">{t("updates.latest")}</h2>
         <Link
@@ -46,6 +46,6 @@ export default function LatestUpdates({ limit = 5 }: { limit?: number }) {
           </li>
         ))}
       </ol>
-    </aside>
+    </section>
   )
 }

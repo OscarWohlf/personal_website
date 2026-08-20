@@ -6,37 +6,36 @@ import { useI18n } from "../i18n/useI18n"
 export default function Home() {
   const { t } = useI18n()
   return (
-    <section className="py-12 md:py-16 lg:py-20">
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
-        <div>
-          <PageHeader title={t("home.title")} />
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-3xl">
+        <PageHeader title={t("home.title")} />
 
-          <div className="mt-8 grid gap-6 md:grid-cols-[260px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)]">
-            <img
-              src="/images/me_2.jpg"
-              alt="Portrait of Oscar Johan Høeg Wohlfahrt"
-              loading="lazy"
-              className="
-                block w-full rounded-2xl border object-cover shadow-sm dark:border-zinc-800
-                h-[380px]
-                md:h-[390px]
-                lg:h-[420px]
-              "
-            />
+        <article className="mt-8 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <img
+            src="/images/me_2.jpg"
+            alt="Portrait of Oscar Johan Høeg Wohlfahrt"
+            loading="lazy"
+            className="
+              block rounded-2xl border dark:border-zinc-800 object-cover shadow-sm
+              w-full h-[380px] mb-4
+              md:float-left md:mr-8 md:mb-2 md:w-[320px] md:h-[480px] md:[shape-outside:margin-box]
+              lg:w-[360px] lg:h-[540px]
+            "
+          />
 
-            <article className="max-w-2xl leading-relaxed text-zinc-700 dark:text-zinc-300">
-              <p>{t("home.p1")}</p>
+          <p className="mt-4">{t("home.p1")}</p>
 
-              <p className="mt-4">{t("home.p2")}</p>
+          <p className="mt-4">{t("home.p2")}</p>
 
-              <p className="mt-4">{t("home.p3")}</p>
+          <p className="mt-4">{t("home.p3")}</p>
 
-              <p className="mt-4">{t("home.p4")}</p>
-            </article>
-          </div>
+          <p className="mt-4">{t("home.p4")}</p>
+          <div className="clear-both" />
+        </article>
+
+        <div className="mt-12 border-t pt-8 dark:border-zinc-800">
+          <LatestUpdates />
         </div>
-
-        <LatestUpdates />
       </div>
     </section>
   )

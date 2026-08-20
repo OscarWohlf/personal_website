@@ -6,7 +6,6 @@ type Dict = Record<string, string>
 export const en: Dict = {
   "nav.about": "About",
   "nav.projects": "Projects",
-  "nav.updates": "Updates",
   "nav.cv": "CV",
   "nav.contact": "Contact",
 
@@ -38,7 +37,6 @@ export const en: Dict = {
 export const nb: Dict = {
   "nav.about": "Om meg",
   "nav.projects": "Prosjekter",
-  "nav.updates": "Oppdateringer",
   "nav.cv": "CV",
   "nav.contact": "Kontakt",
 

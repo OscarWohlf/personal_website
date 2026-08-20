@@ -62,7 +62,6 @@ export default function Navbar() {
           <nav className="hidden xl:flex justify-center items-center gap-5">
             <NavA to="/" end>{t("nav.about")}</NavA>
             <NavA to="/projects">{t("nav.projects")}</NavA>
-            <NavA to="/updates">{t("nav.updates")}</NavA>
             <NavA to="/cv">{t("nav.cv")}</NavA>
             <NavA to="/contact">{t("nav.contact")}</NavA>
           </nav>
@@ -95,7 +94,6 @@ export default function Navbar() {
           <nav className="pb-3 pt-2 grid gap-2">
             <NavA to="/" end onClick={() => setOpen(false)}>{t("nav.about")}</NavA>
             <NavA to="/projects" onClick={() => setOpen(false)}>{t("nav.projects")}</NavA>
-            <NavA to="/updates" onClick={() => setOpen(false)}>{t("nav.updates")}</NavA>
             <NavA to="/cv" onClick={() => setOpen(false)}>{t("nav.cv")}</NavA>
             <NavA to="/contact" onClick={() => setOpen(false)}>{t("nav.contact")}</NavA>
             <div className="mt-2 flex items-center gap-2">
