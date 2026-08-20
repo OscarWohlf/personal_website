@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     slug: "lean-proof-generation",
     title: "Adaptive Compute Allocation for Lean Proof Generation",
-    date: "Fev - June 2026",
+    date: "Feb - June 2026",
     tags: ["LLMs", "Lean", "Formal Methods", "Inference-Time Compute"],
     description:
       "An EPFL semester project on whether inference-time compute can be allocated more effectively when generating formal Lean proofs with language models.",
@@ -74,6 +74,7 @@ export const projects: Project[] = [
     slug: "building-lifetimes",
     title: "Estimating Building Lifetimes with Machine Learning",
     date: "Feb - Jun 2025",
+    tags: ["Machine Learning", "Survival Analysis", "Data Science", "BSc Thesis"],
     description: "My bachelor thesis was about estimating the lifetime of danish buildings using various machine learning methods. We also created and implemented our own baseline method. The thesis can be downloaded in the link on this site. A more publishable paper is also on its way. Code is also available on request.",
     image: "/images/thesis_image.jpg",
     content: ["My bachelor thesis at DTU was about estimating the lifetime of Danish buildings using various machine learning methods. We also created and implemented our own baseline method. The thesis can be downloaded in the link on this site. A more publishable paper is also on the way. Our code used for data processing and model training is available on request.",
@@ -90,6 +91,7 @@ export const projects: Project[] = [
     slug: "small-world-networks",
     title: "Modified Watts-Strogatz Small-World Networks",
     date: "Dec 2024",
+    tags: ["Network Science", "Mathematical Modeling", "Graph Theory", "Python"],
     description:
       "During my exchange at NYU I did a course in Mathematical Modeling. Our final project in this course was to write a paper where we made a modification to a model presented in a paper of our choice. I chose to modify the Watts-Strogatz small-world network model. Both my paper and code are available through the links above.",
     image: "/images/small_world_image.jpg",
@@ -106,6 +108,7 @@ export const projects: Project[] = [
     slug: 'java-game',
     title: "Lazer Maze Java Game",
     date: "May 2024",
+    tags: ["Java", "Game Development", "Agile", "TDD"],
     description: "A game made in Java for the course 'Agile Object Oriented Software Development' at DTU", 
     image: "/images/game_image.png",
     content: ["A game made in Java for the course 'Agile Object Oriented Software Development' at DTU. The game is a simple maze game where the player has to navigate a laser through a maze of mirrors. The game has a 30 level campaign mode, a online mode where you can play against other players and a sand-box mode where you can create your own levels.",
@@ -120,6 +123,7 @@ export const projects: Project[] = [
     slug: "gcl-project",
     title: "Parser, Compiler and Interpreter for GCL",
     date: "Feb-May 2024",
+    tags: ["F#", "Compiler Design", "Parsing", "Formal Methods"],
     description: "A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the GCL programming language using F#.",
     image: "/images/gcl_image.png",
     content: ["A project for the course 'Computer Science Modelling' at DTU where we implemented a parser, compiler and interpreter for the Guarded Commands Language (GCL) programming language using F#. GCL is a compact programming language defined by Edsger Dijkstra, which is made to make it easy to write proofs for a program.",
@@ -130,6 +134,7 @@ export const projects: Project[] = [
     slug: "processor-simulator",
     title: "Processor Simulator in Python with Cache",
     date: "Nov - Dec 2024",
+    tags: ["Python", "Computer Architecture", "Caching", "Simulation"],
     description: "Another project I did during my exchange at NYU in a Computer Architecture class.",
     content: ["Another project I did during my exchange at NYU in a Computer Architecture class.",
               "You can read more about it in the GitHub repository linked above."],
